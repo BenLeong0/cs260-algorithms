@@ -34,10 +34,12 @@ print('Attributes of node 4:', G.nodes[4])
 
 edgelist = [(0,1),(0,2),(2,3),(3,4),(0,4)]
 H = nx.Graph(edgelist)
+J = nx.subgraph(G,(1,2,3,5,7,8))
+pos = nx.spring_layout(J)
 
-nx.draw(G,pos,edge_color='black',width=1,linewidths=1,
+nx.draw(J,pos,edge_color='black',width=1,linewidths=1,
         node_size=500,node_color='pink',alpha=0.9,
-        labels={node:node for node in G.nodes()})
+        labels={node:node for node in J.nodes()})
 
 # nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
 
