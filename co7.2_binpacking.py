@@ -34,6 +34,4 @@ def first_fit_decreasing(I):
     return first_fit(J)
 
 
-
-
 print(first_fit_decreasing(I))
