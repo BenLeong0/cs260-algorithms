@@ -1,16 +1,17 @@
 import matplotlib.pyplot as plt
 import networkx as nx
+from collections import deque
 
 
 def BFS(G):
     nodes = list(G.nodes)
     for v in nodes:
         G.nodes[v]['visited'] = False
-    Q = [nodes[0]]
+    Q = deque([nodes[0]])
     level = 0
     G.nodes[nodes[0]]['level'] = level
     while Q:
-        u = Q.pop(0)
+        u = Q.popleft()
         if G.nodes[u]['visited'] == False:
             G.nodes[u]['visited'] = True
             for w in list(G.adj[u]):
